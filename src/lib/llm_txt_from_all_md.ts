@@ -37,7 +37,8 @@ export async function llm_txt_from_all_md(options: {
     }
   });
 
-  await Deno.remove(llm_txt_path, { recursive: true });
+  await std_fs.exists(llm_txt_path, { isFile: true }) &&
+    await Deno.remove(llm_txt_path);
   await std_fs.ensureFile(llm_txt_path);
 
   for (const chunk of llm_chunks) {
