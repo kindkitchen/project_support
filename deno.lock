@@ -6,7 +6,8 @@
     "jsr:@std/internal@^1.0.10": "1.0.10",
     "jsr:@std/internal@^1.0.9": "1.0.10",
     "jsr:@std/path@^1.1.1": "1.1.2",
-    "jsr:@std/path@^1.1.2": "1.1.2"
+    "jsr:@std/path@^1.1.2": "1.1.2",
+    "jsr:@std/regexp@^1.0.1": "1.0.1"
   },
   "jsr": {
     "@std/cli@1.0.22": {
@@ -27,13 +28,17 @@
       "dependencies": [
         "jsr:@std/internal@^1.0.10"
       ]
+    },
+    "@std/regexp@1.0.1": {
+      "integrity": "5179d823465085c5480dafb44438466e83c424fadc61ba31f744050ecc0f596d"
     }
   },
   "workspace": {
     "dependencies": [
       "jsr:@std/cli@^1.0.22",
       "jsr:@std/fs@^1.0.19",
-      "jsr:@std/path@^1.1.2"
+      "jsr:@std/path@^1.1.2",
+      "jsr:@std/regexp@^1.0.1"
     ]
   }
 }

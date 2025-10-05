@@ -1,7 +1,12 @@
 import * as std_cli from "@std/cli";
 import * as std_fs from "@std/fs";
 import * as std_path from "@std/path";
+import * as std_regexp from "@std/regexp";
 
+const skip = [
+  std_regexp.escape("node_modules/"),
+  std_regexp.escape(".github/"),
+].map((s) => new RegExp(s));
 export async function llm_txt_from_all_md(options: {
   root: string;
 }) {
@@ -20,7 +25,7 @@ export async function llm_txt_from_all_md(options: {
       followSymlinks: true,
       includeSymlinks: true,
       maxDepth: 10,
-      skip: [/node_modules/],
+      skip,
     })
   ) {
     const content = await Deno.readTextFile(path);
